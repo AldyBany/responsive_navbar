@@ -1,0 +1,155 @@
+:root{
+    --first-color: rgb(174, 0, 255);
+    --second-color: rgb(64, 250, 234);
+    --title-color: rgb(255, 0, 149);
+    --text-color: rgb(66, 66, 66);
+}
+
+/* BASE */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 3rem 0 0 0;
+    font-size: .938rem;
+    background-color: whitesmoke;
+    position: relative;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* REUSABLE CLASSES */
+
+.container{
+    max-width: 968px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.section{
+    padding: 4.5rem 0 2rem;
+    height: 100vh;
+    position: relative;
+    z-index: -10;
+}
+
+.section__title{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+}
+
+
+/* HEADER */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: .4s;
+}
+
+/* NAV */
+
+.nav{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--first-color);
+}
+
+.nav__list{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* DYNAMIC CLASSES */
+
+.scroll__header{
+    box-shadow: 0 1px 12px rgba(0,0,0,.1);;
+}
+
+.active__link{
+    color: var(--second-color);
+}
+
+
+
+/* QUERIES */
+
+@media screen and (max-width: 767px){
+    .nav__menu{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4rem;
+        padding: 0 1rem;
+        display: grid;
+        align-content: center;
+        border-radius: 1.5rem 1.5rem 0 0;
+        box-shadow: 0 -1px 12px rgba(0,0,0,.1);
+        background-color: white;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .nav__list{
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    body{
+        margin: 0;
+    }
+
+    .nav{
+        height: 4.5rem;
+    }
+
+    .container{
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .section{
+        padding: 7.5rem 0 2rem;
+    }
+
+    .nav__img{
+        display: none;
+    }
+}
